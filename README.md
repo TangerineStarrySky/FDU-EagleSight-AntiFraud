@@ -1,5 +1,9 @@
 # 鹰眼APP：一个基于手机端侧大模型的智能反诈系统
 
+<div align=center>  
+<img src="./imgs/app_icon.webp" width=30%> 
+</div>
+
 ## APP简介
 此APP是本人在参与**FDUROP**科研项目中的产物，名为“**鹰眼**”（**EagleSight**），这是一个基于**Qwen2.5-0.5b**大语言模型的智能反诈系统，旨在通过端侧部署实现对手机短信中诈骗信息的实时识别与预警。该系统利用**LoRA**技术进行[模型微调](https://github.com/TangerineStarrySky/FDU-EagleSight-AntiFraud/tree/FineTune)（微调后模型暂未完成部署），并采用**Q4F16**量化技术优化模型性能，最后利用MLC-LLM工具转换模型格式并部署到终端设备，确保在移动设备上高效运行，同时保护用户隐私。
 
@@ -38,15 +42,26 @@
 - **模型工具**：MLC-LLM框架。
 
 ### 项目截图
-<div style="display: flex; justify-content: space-around;">
-  <img src="./imgs/homepage.png" style="width: 40%;"/>
-  <img src="./imgs/history.png" style="width: 40%;"/>
+<style>
+  .img-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .img-container img {
+    width: 20%;
+    aspect-ratio: 1 / 2; /* 保持宽高比为1:1，即正方形 */
+    object-fit: cover; /* 裁剪图片以填充整个容器 */
+  }
+</style>
+
+<div class="img-container">
+  <img src="./imgs/homepage.png" />
+  <img src="./imgs/history.png" />
+  <img src="./imgs/detail.png" />
+  <img src="./imgs/learning.png" />
 </div>
 
-<div style="display: flex; justify-content: space-around;">
-  <img src="./imgs/detail.png" style="width: 40%;"/>
-  <img src="./imgs/learning.png" style="width: 40%;"/>
-</div>
 
 ### 参考
 [MLC-LLM官方文档](https://llm.mlc.ai/docs/deploy/android.html#deploy-android)
