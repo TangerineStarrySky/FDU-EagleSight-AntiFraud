@@ -42,24 +42,12 @@
 - **模型工具**：MLC-LLM框架。
 
 ### 项目截图
-<style>
-  .img-container {
-    display: flex;
-    justify-content: space-around;
-  }
 
-  .img-container img {
-    width: 20%;
-    aspect-ratio: 1 / 2; /* 保持宽高比为1:1，即正方形 */
-    object-fit: cover; /* 裁剪图片以填充整个容器 */
-  }
-</style>
-
-<div class="img-container">
-  <img src="./imgs/homepage.png" />
-  <img src="./imgs/history.png" />
-  <img src="./imgs/detail.png" />
-  <img src="./imgs/learning.png" />
+<div style="display: flex; justify-content: space-around;">
+  <img src="./imgs/homepage_resized.png" style="width: 24%;"/>
+  <img src="./imgs/history_resized.png" style="width: 24%;"/>
+  <img src="./imgs/detail_resized.png" style="width: 24%;"/>
+  <img src="./imgs/learning_resized.png" style="width: 24%;"/>
 </div>
 
 
