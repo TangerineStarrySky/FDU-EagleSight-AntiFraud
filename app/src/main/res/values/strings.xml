@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">EagleSight</string>
+    <string name="open_analysis">开启鹰眼智能识别</string>
+    <string name="close_analysis">关闭鹰眼智能识别</string>
+    <string name="sms_detect_service">短信实时检测服务，请开启</string>
+    <string name="sms_detect_service0">短信实时检测服务</string>
+
+    <string name="eight_always">牢记八个“凡是”</string>
+    <string name="eight_always_detail"> 1.凡是要求垫付资金做任务的兼职刷单，都是诈骗！\n
+2.凡是宣称“内幕消息、专家指导、稳赚不赔、高额回报”的投资理财，都是诈骗！\n
+3.凡是宣称“无抵押、无资质要求、低利率、放款快”的网贷广告，要求提供验证码或先交各种费用的，都是诈骗！\n
+4.凡是自称电商、物流平台客服，主动以退款、理赔、退换为由，要求提供银行卡和手机验证码的，都是诈骗！\n
+5.凡是自称公检法工作人员，以涉嫌相关违法犯罪为由，要求将资金打入“安全账户”的，都是诈骗！\n
+6.凡是自称“领导”主动添加社交账号，以帮助亲属朋友为由让你转账汇款的，都是诈骗！\n
+7.凡是以各种名义发送不明链接，让你输入银行卡号、手机验证码和各种密码的，都是诈骗！\n
+8.凡是通过社交平台拉你入群，让你点击链接下载APP进行投资、退费的，都是诈骗！\n</string>
+    <string name="ten_frequency">十大高发类案</string>
+    <string name="ten_frequency_detail"> 1.刷单返利诈骗\n
+2.虚假网络投资理财诈骗\n
+3.虚假网络贷款诈骗\n
+4.冒充电商物流客服诈骗\n
+5.冒充公检法诈骗\n
+6.虚假征信诈骗\n
+7.虚假购物、服务诈骗\n
+8.冒充领导、熟人类诈骗\n
+9.网络游戏产品虚假交易诈骗\n
+10.婚恋、交友类诈骗\n</string>
+    <string name="seven_tools">七大反诈利器</string>
+    <string name="seven_tools_detail"> 1.国家反诈中心APP\n
+2.96110预警劝阻专线\n
+3.12381涉诈预警劝阻短信\n
+4.全国移动电话卡“一证通查”\n
+5.互联网反诈云平台\n
+6.反诈预警短信系统\n
+7.国家反诈中心官方政务号\n
+    </string>
+</resources>

@@ -1,0 +1,10 @@
+{
+  "model_list": [
+    {
+      "model_id": "Qwen2.5-0.5B-Instruct-q4f16_1-MLC",
+      "model_lib": "qwen2_q4f16_1_dbc9845947d563a3c13bf93ebf315c83",
+      "model_url": "https://huggingface.co/mlc-ai/Qwen2.5-0.5B-Instruct-q4f16_1-MLC",
+      "estimated_vram_bytes": 1288490240
+    }
+  ]
+}
