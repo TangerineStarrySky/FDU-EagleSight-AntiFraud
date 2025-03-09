@@ -1,6 +1,6 @@
 ### 一、将模型转换成MLC格式
 
-工作目录：`D:\fudan\LLM`
+工作目录：`{ProjectDir}`
 
 #### 1. 转换权重
 ```shell
@@ -31,9 +31,9 @@ mlc_llm compile Quantization/Qwen2.5-q4f16_1-MLC/mlc-chat-config.json --device a
 #### 1.上传模型
 ```shell
 git lfs install
-git clone https://huggingface.co/tangerine6/tangerine_model
+git clone https://huggingface.co/{username}/{model}
 cd tangerine_model
-cp D:/fudan/LLM/Quantization/Qwen2.5-q4f16_1-MLC* .
+cp {ProjectDir}/Quantization/Qwen2.5-q4f16_1-MLC* .
 git add .
 git commit -m "Add model"
 git push origin main
@@ -41,8 +41,8 @@ git push origin main
 
 #### 2.打包模型
 ```shell
-cd D:/fudan/LLM/onDevice/mlc-llm/android/MLCChat
-set MLC_LLM_SOURCE_DIR=D:/fudan/LLM/onDevice/mlc-llm
+cd {ProjectDir}/onDevice/mlc-llm/android/MLCChat
+set MLC_LLM_SOURCE_DIR={ProjectDir}/onDevice/mlc-llm
 mlc_llm package
 ```
 首先删除`MLCChat/dist`
@@ -52,7 +52,7 @@ mlc_llm package
     "device": "android",
     "model_list": [
         {
-            "model": "HF://tangerine6/tangerine_model",
+            "model": "HF://{username}/{model}",
             "estimated_vram_bytes": 1288490240,
             "model_id": "Qwen2.5-ft-q4f16_1-MLC",
             "bundle_weight": true,
