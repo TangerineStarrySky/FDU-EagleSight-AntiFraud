@@ -46,20 +46,3 @@ model = PeftModel.from_pretrained(
     model_id="./output/multi-class-20epoch/checkpoint-7500/", # 此处改为保存的检查点位置
 )
 ```
-
-**现在遇到的问题是**：
-注释下面这行代码（分别加载base_model和LoRA适配器，可以得到预期的模型回复）
-但是运行下面这行代码（合并权重）之后再次调用，模型的回复就会出现一堆乱码
-
-```python
-model = model.merge_and_unload()
-```
-
-0.5B模型的大小是最适合部署的，也是最能体现微调前后效果对比的（因为微调之前0.5b的表现极差），**希望可以优先解决上述问题**（目前猜测的错误原因是合并时浮点数溢出（是否能换用更高精度的模型权重表示？）tokenizer编码错误？……
-
-
-#### 其他
-目前成功尝试过的模型部署是mlc提供的量化后的版本
-https://huggingface.co/mlc-ai/Qwen2.5-0.5B-Instruct-q4f16_1-MLC/tree/main
-
-微调后的模型如何（量化）转换成mlc格式（后续可采用相同方式部署），目前这一流程还没有打通。
