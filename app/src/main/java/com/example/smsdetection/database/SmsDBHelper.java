@@ -9,7 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.example.smsdetection.entity.SmsInfo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 
@@ -138,4 +140,25 @@ public class SmsDBHelper extends SQLiteOpenHelper {
         mWDB.delete(TABLE_SMS_INFO, "1=1", null);
     }
 
+    public List<Long> queryCategories() {
+        List<SmsInfo> list = queryAllSmsInfo();
+        long normal = list.stream().filter(smsInfo -> smsInfo.type == 0).count();
+        long deceive = list.stream().filter(smsInfo -> smsInfo.type == 1).count();
+        ArrayList<Long> res = new ArrayList<>();
+        res.add(normal);
+        res.add(deceive);
+        return res;
+    }
+
+    public Map<String, Integer> DeceiveSmsDividedBySenders() {
+        List<SmsInfo> list = queryAllSmsInfo();
+        Map<String, Integer> senderDeceiveCountMap = new HashMap<>();
+
+        for (SmsInfo smsInfo : list) {
+            if (smsInfo.type == 1) {
+                senderDeceiveCountMap.put(smsInfo.sender, senderDeceiveCountMap.getOrDefault(smsInfo.sender, 0) + 1);
+            }
+        }
+        return senderDeceiveCountMap;
+    }
 }

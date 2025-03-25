@@ -1,0 +1,12 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 背景层：渐变色 -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="#637AEF"
+                android:endColor="#03B694"
+                android:type="linear"/>
+        </shape>
+    </item>
+</layer-list>

@@ -66,4 +66,5 @@ dependencies {
     implementation ("org.jetbrains.kotlinx","kotlinx-serialization-json","1.6.3")
     implementation(kotlin("stdlib"))
     implementation ("androidx.activity","activity-compose","1.3.1")
+    implementation("com.github.PhilJay","MPAndroidChart","v3.1.0")
 }

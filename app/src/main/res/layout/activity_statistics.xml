@@ -1,10 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StatisticsActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/glass_background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- 诈骗与普通信息的柱状图标题 -->
+    <TextView
+        android:id="@+id/chart_title_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="短信类型占比统计"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 诈骗与普通信息类型占比饼图 -->
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie_chart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- 诈骗信息按发信人分类的柱状图标题 -->
+    <TextView
+        android:id="@+id/chart_title_sender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="诈骗短信来源分析（Top 10）"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 诈骗信息按发信人分类的柱状图 -->
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bar_chart_sender"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+</LinearLayout>

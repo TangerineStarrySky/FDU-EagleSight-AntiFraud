@@ -54,12 +54,12 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
             return insets;
         });
         mDBHelper = SmsDBHelper.getInstance(this);
-        TextView tv_title = findViewById(R.id.tv_title);
-        tv_title.setText("历史记录");
-        TextView tv_history = findViewById(R.id.tv_history);
-        tv_history.setText("");
+//        TextView tv_title = findViewById(R.id.tv_title);
+//        tv_title.setText("历史记录");
+//        TextView tv_history = findViewById(R.id.tv_history);
+//        tv_history.setText("");
 
-        findViewById(R.id.ic_back).setOnClickListener(this);
+//        findViewById(R.id.ic_back).setOnClickListener(this);
         findViewById(R.id.btn_clear).setOnClickListener(this);
         findViewById(R.id.btn_statistics).setOnClickListener(this);
         findViewById(R.id.btn_search).setOnClickListener(this);

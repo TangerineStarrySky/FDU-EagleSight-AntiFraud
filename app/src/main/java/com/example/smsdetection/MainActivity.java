@@ -151,12 +151,12 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
 
     private void addRecords(){
         Random random = new Random();
-        // 随机生成100条记录
-        for (int i = 0; i < 100; i++) {
+        // 随机生成100条记
+        for (int i = 0; i < 1000; i++) {
             // 随机生成ID
             SmsInfo info = new SmsInfo();
             info.datetime = Utils.getDate(Calendar.getInstance()) + "=" + Utils.getNowTime();
-            info.sender = "138" + String.format("%08d", random.nextInt(100000000)); // 随机生成手机号码
+            info.sender = "138000000" + String.format("%01d", random.nextInt(10)); // 随机生成手机号码
             info.content = "Random content " + random.nextInt(1000); // 随机生成内容
             info.type = random.nextInt(2); // 0 或 1
             if (mDBHelper.save(info) > 0) {
