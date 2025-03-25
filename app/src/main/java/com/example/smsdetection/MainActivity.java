@@ -51,6 +51,8 @@ import com.example.smsdetection.utils.ToastUtil;
 import com.example.smsdetection.utils.Utils;
 
 import java.util.Calendar;
+import java.util.Random;
+
 import android.Manifest;
 
 import org.slf4j.Logger;
@@ -134,6 +136,8 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
         mDBHelper.openReadLink();
         mDBHelper.openWriteLink();
 
+//        addRecords();
+
         Uri uri = Uri.parse("content://sms");
         mObserver = new SmsGetObserver(this);
         getContentResolver().registerContentObserver(uri, true, mObserver);
@@ -143,6 +147,22 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 //            startForegroundService(serviceIntent); // Android 8.0及以上版本
 //        }
+    }
+
+    private void addRecords(){
+        Random random = new Random();
+        // 随机生成100条记录
+        for (int i = 0; i < 100; i++) {
+            // 随机生成ID
+            SmsInfo info = new SmsInfo();
+            info.datetime = Utils.getDate(Calendar.getInstance()) + "=" + Utils.getNowTime();
+            info.sender = "138" + String.format("%08d", random.nextInt(100000000)); // 随机生成手机号码
+            info.content = "Random content " + random.nextInt(1000); // 随机生成内容
+            info.type = random.nextInt(2); // 0 或 1
+            if (mDBHelper.save(info) > 0) {
+//                ToastUtil.show(this, "短信已存入EagleSight历史记录！");
+            }
+        }
     }
 
 

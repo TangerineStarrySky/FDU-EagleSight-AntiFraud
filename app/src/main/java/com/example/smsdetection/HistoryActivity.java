@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -54,28 +55,6 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
 
         lv_sms = findViewById(R.id.lv_sms);
         tv_total_num = findViewById(R.id.tv_total_num);
-
-//        Calendar calendar = Calendar.getInstance();
-//        SmsInfo smsInfo = new SmsInfo();
-//        smsInfo.sender = "我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我";
-//        smsInfo.datetime = Utils.getDate(calendar);
-//        smsInfo.type = 0;
-//        smsInfo.content = "普通信息测试普通信息测试普通信息测试普通" +
-//                "信息测试普通信息测试普通信息测试普通信息测试普" +
-//                "信息测试普通信息测试普通信息测试普通信息测试普" +
-//                "信息测试普通信息测试普通信息测试普通信息测试普" +
-//                "信息测试普通信息测试普通信息测试普通信息测试普" +
-//                "通信息测试普通信息测试普通信息测试普通信息测试普通信息测试";
-//        mDBHelper.save(smsInfo);
-//
-//        SmsInfo smsInfo2 = new SmsInfo();
-//        smsInfo2.sender = "我";
-//        smsInfo2.datetime = Utils.getDate(calendar);
-//        smsInfo2.type = 1;
-//        smsInfo2.content = "诈骗信息测试";
-//        mDBHelper.save(smsInfo2);
-//        chatState = (AppViewModel.ChatState) getIntent().getSerializableExtra("chat_state");
-
     }
 
     @Override
