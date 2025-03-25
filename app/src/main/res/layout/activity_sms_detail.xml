@@ -1,167 +1,139 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/gradient_bg_detail"
+    android:padding="16dp">
 
     <include layout="@layout/title_sms" />
 
-    <!-- 分割线 -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#D3D3D3" />
-
+    <!-- 卡片容器 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:background="@drawable/glass_card"
+        android:padding="16dp"
+        android:layout_marginTop="8dp"
+        android:elevation="6dp">
 
+        <!-- 收信时间 -->
         <TextView
-            android:layout_width="90dp"
-            android:layout_height="match_parent"
-            android:gravity="center|end"
-            android:text="收信时间："
-            android:textColor="@color/black"
-            android:textSize="17sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收信时间"
+            android:textSize="14sp"
+            android:textColor="@color/gray"/>
 
         <TextView
             android:id="@+id/detail_datetime"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:hint="这里填写收信时间"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="这里填写收信时间"
+            android:layout_margin="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:paddingBottom="8dp"/>
 
-    <!-- 分割线 -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#D3D3D3" />
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray"
+            android:layout_marginBottom="8dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
-
+        <!-- 发信人 -->
         <TextView
-            android:layout_width="90dp"
-            android:layout_height="match_parent"
-            android:gravity="center|end"
-            android:text="发信人："
-            android:textColor="@color/black"
-            android:textSize="17sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发信人"
+            android:textSize="14sp"
+            android:textColor="@color/gray"/>
 
         <TextView
             android:id="@+id/detail_sender"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:hint="这里填写发信人"
-            android:textColor="@color/black"
-            android:textSize="17sp" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="这里填写发信人"
+            android:layout_margin="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:paddingBottom="8dp"/>
 
-    <!-- 分割线 -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#D3D3D3" />
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray"
+            android:layout_marginBottom="8dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
-
+        <!-- 短信内容 -->
         <TextView
-            android:layout_width="90dp"
-            android:layout_height="match_parent"
-            android:gravity="center|end"
-            android:text="短信内容："
-            android:textColor="@color/black"
-            android:textSize="17sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="短信内容"
+            android:textSize="14sp"
+            android:textColor="@color/gray"/>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/detail_content"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="start|top"
-                android:hint="这里填写需要检测的信息"
-                android:textColor="@color/black"
-                android:textSize="17sp" />
+                android:layout_height="wrap_content"
+                android:text="这里填写需要检测的信息"
+                android:layout_margin="10dp"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:paddingBottom="8dp"/>
         </ScrollView>
-    </LinearLayout>
 
-    <!-- 分割线 -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#D3D3D3" />
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray"
+            android:layout_marginBottom="8dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
+        <!-- 检测结果 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="检测结果"
+            android:textSize="14sp"
+            android:textColor="@color/gray"/>
 
         <TextView
-            android:layout_width="90dp"
-            android:layout_height="match_parent"
-            android:gravity="center|end"
-            android:text="检测结果："
-            android:textColor="@color/black"
-            android:textSize="17sp" />
-
-        <LinearLayout
+            android:id="@+id/detail_type"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:text="这里显示短信类型"
+            android:layout_margin="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:paddingBottom="8dp"/>
 
+        <Button
+            android:id="@+id/detail_btn"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="查看详情"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:background="@drawable/neon_button"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/detail_type"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:hint="这里显示短信类型"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/detail_btn"
+                android:id="@+id/detail_result"
                 android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:text="查看详情"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:id="@+id/detail_result"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="start|top"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-            </ScrollView>
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="检测详情"
+                android:textSize="17sp"
+                android:textColor="@color/white"/>
+        </ScrollView>
     </LinearLayout>
 
 </LinearLayout>

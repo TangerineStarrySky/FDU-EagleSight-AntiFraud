@@ -1,6 +1,7 @@
 package com.example.smsdetection;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -47,8 +48,9 @@ public class SmsDetailActivity extends AppCompatActivity implements View.OnClick
 
         TextView tv_title = findViewById(R.id.tv_title);
         tv_title.setText("短信详情");
+        tv_title.setTextColor(Color.WHITE);
         TextView tv_history = findViewById(R.id.tv_history);
-        tv_history.setText("历史记录");
+        tv_history.setText("");
 
         findViewById(R.id.tv_history).setOnClickListener(this);
         findViewById(R.id.ic_back).setOnClickListener(this);
