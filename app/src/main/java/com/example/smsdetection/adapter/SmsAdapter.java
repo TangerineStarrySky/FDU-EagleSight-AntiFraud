@@ -68,7 +68,7 @@ public class SmsAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public final class ViewHolder {
+    public static final class ViewHolder {
         public TextView item_date;
         public TextView item_time;
         public TextView item_sender;

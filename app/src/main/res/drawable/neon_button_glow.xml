@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 霓虹光晕层 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#8800FFFF"/> <!-- 半透明光晕 -->
+            <corners android:radius="18dp"/>
+        </shape>
+    </item>
+
+    <!-- 按钮本体 -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="#0ff"
+                android:endColor="#0099FF"
+                android:type="linear"/>
+            <corners android:radius="16dp"/>
+            <stroke android:width="3dp" android:color="#00FFFF"/>
+        </shape>
+    </item>
+</layer-list>

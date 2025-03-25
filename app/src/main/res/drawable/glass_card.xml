@@ -2,7 +2,7 @@
     <!-- 背景半透明玻璃效果 -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#6616213E"/> <!-- 深蓝半透明 -->
+            <solid android:color="#66162133"/> <!-- 深蓝半透明 -->
             <corners android:radius="20dp"/> <!-- 圆角 -->
         </shape>
     </item>
@@ -10,7 +10,7 @@
     <!-- 霓虹蓝紫边框 -->
     <item>
         <shape android:shape="rectangle">
-            <stroke android:width="2dp" android:color="#AA00C9FF"/> <!-- 霓虹蓝边框 -->
+            <stroke android:width="4dp" android:color="#AA00C9FF"/> <!-- 霓虹蓝边框 -->
             <corners android:radius="20dp"/>
         </shape>
     </item>

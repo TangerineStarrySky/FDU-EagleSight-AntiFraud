@@ -14,7 +14,6 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32"
@@ -31,13 +30,17 @@
         android:theme="@style/Theme.SMSdetection"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".StatisticsActivity"
+            android:exported="false" />
+
         <uses-native-library
             android:name="libOpenCL.so"
-            android:required="false"/>
-
+            android:required="false" />
         <uses-native-library
             android:name="libOpenCL-pixel.so"
             android:required="false" />
+
         <activity
             android:name=".LearningActivity"
             android:exported="false" />
@@ -55,6 +58,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

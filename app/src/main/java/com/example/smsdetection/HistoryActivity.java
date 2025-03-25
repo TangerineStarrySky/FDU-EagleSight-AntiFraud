@@ -2,9 +2,13 @@ package com.example.smsdetection;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -32,6 +36,11 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
     private ListView lv_sms;
     private TextView tv_total_num;
 
+    private EditText etSearch;
+    private TextView tv_no_sms;
+    private LinearLayout bottom_layout;
+
+
 //    private AppViewModel.ChatState chatState;
 
     @Override
@@ -52,9 +61,17 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
 
         findViewById(R.id.ic_back).setOnClickListener(this);
         findViewById(R.id.btn_clear).setOnClickListener(this);
+        findViewById(R.id.btn_statistics).setOnClickListener(this);
+        findViewById(R.id.btn_search).setOnClickListener(this);
 
         lv_sms = findViewById(R.id.lv_sms);
         tv_total_num = findViewById(R.id.tv_total_num);
+        etSearch = findViewById(R.id.et_search);
+        tv_no_sms = findViewById(R.id.tv_no_sms);
+        bottom_layout = findViewById(R.id.bottom_layout);
+
+        mSmsList = mDBHelper.queryAllSmsInfo();
+        showSMS(mSmsList);
     }
 
     @Override
@@ -74,22 +91,31 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
             });
             builder.setNegativeButton("否", null);
             builder.create().show();
+        }else if(vid == R.id.btn_statistics){
+            Intent intent = new Intent(HistoryActivity.this, StatisticsActivity.class);
+            startActivity(intent);
+        } else if (vid == R.id.btn_search) {
+            String keyword = etSearch.getText().toString().trim();
+            Log.d("DEBUG", keyword);
+            mSmsList = mDBHelper.querySmsInfoByContent(keyword);
+            Log.d("DEBUG", String.valueOf(mSmsList.size()));
+            if(mSmsList.isEmpty()) tv_no_sms.setText("没有符合要求的短信记录!");
+            showSMS(mSmsList);
         }
-
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        showSMS();
-    }
 
-    private void showSMS() {
-        mSmsList = mDBHelper.queryAllSmsInfo();
+    private void showSMS(List<SmsInfo> mSmsList) {
         Collections.reverse(mSmsList);
-        if (mSmsList.size() == 0) {
+        if (mSmsList.isEmpty()) {
+            tv_no_sms.setVisibility(View.VISIBLE);
+            lv_sms.setVisibility(View.GONE);
+            bottom_layout.setVisibility(View.GONE);
             return;
         }
+        tv_no_sms.setVisibility(View.GONE);
+        lv_sms.setVisibility(View.VISIBLE);
+        bottom_layout.setVisibility(View.VISIBLE);
         mSmsAdapter = new SmsAdapter(this, mSmsList);
         lv_sms.setAdapter(mSmsAdapter);
         // 给列表项设置监听

@@ -10,6 +10,7 @@ import com.example.smsdetection.entity.SmsInfo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class SmsDBHelper extends SQLiteOpenHelper {
@@ -119,6 +120,12 @@ public class SmsDBHelper extends SQLiteOpenHelper {
             info.type = cursor.getInt(4);
         }
         return info;
+    }
+
+    // 根据内容
+    public List<SmsInfo> querySmsInfoByContent(String keyword){
+        List<SmsInfo> list = queryAllSmsInfo();
+        return list.stream().filter(smsInfo -> smsInfo.content.contains(keyword)).collect(Collectors.toList());
     }
 
     // 根据ID删除信息

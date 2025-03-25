@@ -7,6 +7,7 @@
 
     <!-- 半透明卡片 -->
     <LinearLayout
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -25,8 +26,8 @@
             android:padding="8dp">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
                 android:src="@drawable/ic_calender"/>
 
             <TextView
@@ -35,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 tools:text="2024.10.16"/>
             <TextView
                 android:id="@+id/item_time"
@@ -43,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 tools:text="10:19:15"/>
         </LinearLayout>
 
@@ -56,8 +57,8 @@
             android:padding="8dp">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_sender"/>
 
             <TextView
@@ -66,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/neon_blue"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 tools:text="13812345678"/>
         </LinearLayout>
 
@@ -77,10 +78,10 @@
             android:layout_height="wrap_content"
             android:padding="12dp"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:shadowColor="@color/neon_purple"
-            android:shadowDx="2"
-            android:shadowDy="2"
+            android:shadowDx="4"
+            android:shadowDy="4"
             android:shadowRadius="6"
             tools:text="哈哈哈哈哈哈哈哈哈"/>
 
@@ -94,8 +95,9 @@
 
             <ImageView
                 android:id="@+id/ic_warning"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:paddingTop="6dp"
                 android:src="@drawable/ic_warning"/>
 
             <TextView
@@ -105,7 +107,7 @@
                 android:layout_marginStart="8dp"
                 android:textColor="@color/neon_red"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="28sp"
                 tools:text="诈骗"/>
         </LinearLayout>
     </LinearLayout>
