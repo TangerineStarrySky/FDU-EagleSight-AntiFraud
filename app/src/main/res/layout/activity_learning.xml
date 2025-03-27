@@ -4,7 +4,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/glass_background">
 
     <include layout="@layout/title_sms"/>
 
@@ -22,6 +23,7 @@
                 android:layout_height="wrap_content"
                 android:text="反诈知识学习"
                 android:textSize="40sp"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp"/>
 
@@ -29,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/eight_always"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:layout_marginBottom="8dp"/>
 
@@ -36,6 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:textColor="@color/white"
                 android:text="@string/eight_always_detail"
                 android:textSize="17sp" />
 
@@ -44,12 +48,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ten_frequency"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_marginBottom="8dp"
                 android:text="@string/ten_frequency_detail"
                 android:textSize="17sp" />
@@ -59,12 +65,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/seven_tools"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_marginBottom="8dp"
                 android:text="@string/seven_tools_detail"
                 android:textSize="17sp" />
