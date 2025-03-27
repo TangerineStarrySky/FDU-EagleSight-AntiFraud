@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">EagleSight</string>
-    <string name="open_analysis">开启鹰眼智能识别</string>
-    <string name="close_analysis">关闭鹰眼智能识别</string>
+    <string name="open_analysis">开启分析</string>
+    <string name="close_analysis">关闭分析</string>
     <string name="sms_detect_service">短信实时检测服务，请开启</string>
     <string name="sms_detect_service0">短信实时检测服务</string>
 

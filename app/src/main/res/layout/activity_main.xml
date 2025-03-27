@@ -88,6 +88,7 @@
             android:text="这里显示检测结果"
             android:gravity="center|left"
             android:layout_marginTop="16dp" />
+
     </LinearLayout>
 
     <!-- 悬浮按钮菜单 -->
@@ -108,8 +109,7 @@
         android:layout_height="56dp"
         android:src="@android:drawable/ic_menu_info_details"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="25dp"
-        android:layout_marginEnd="95dp"
+        android:layout_margin="25dp"
         android:background="@drawable/neon_button"
         android:elevation="10dp"
         android:visibility="gone"/>
@@ -120,8 +120,7 @@
         android:layout_height="56dp"
         android:src="@android:drawable/ic_menu_help"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="25dp"
-        android:layout_marginEnd="165dp"
+        android:layout_margin="25dp"
         android:background="@drawable/neon_button"
         android:elevation="10dp"
         android:visibility="gone"/>
@@ -132,8 +131,7 @@
         android:layout_height="56dp"
         android:src="@android:drawable/ic_menu_preferences"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="25dp"
-        android:layout_marginEnd="235dp"
+        android:layout_margin="25dp"
         android:background="@drawable/neon_button"
         android:elevation="10dp"
         android:visibility="gone"/>
@@ -144,8 +142,7 @@
         android:layout_height="56dp"
         android:src="@android:drawable/ic_menu_view"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="95dp"
-        android:layout_marginEnd="165dp"
+        android:layout_margin="25dp"
         android:background="@drawable/neon_button"
         android:elevation="10dp"
         android:visibility="gone"/>
@@ -156,8 +153,7 @@
         android:layout_height="56dp"
         android:src="@android:drawable/ic_menu_recent_history"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="95dp"
-        android:layout_marginEnd="25dp"
+        android:layout_margin="25dp"
         android:background="@drawable/neon_button"
         android:elevation="10dp"
         android:visibility="gone"/>
@@ -168,8 +164,7 @@
         android:layout_height="56dp"
         android:src="@android:drawable/ic_menu_upload"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="95dp"
-        android:layout_marginEnd="95dp"
+        android:layout_margin="25dp"
         android:background="@drawable/neon_button"
         android:elevation="10dp"
         android:visibility="gone"/>
@@ -180,8 +175,7 @@
         android:layout_height="56dp"
         android:src="@android:drawable/ic_menu_share"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="95dp"
-        android:layout_marginEnd="235dp"
+        android:layout_margin="25dp"
         android:background="@drawable/neon_button"
         android:elevation="10dp"
         android:visibility="gone"/>

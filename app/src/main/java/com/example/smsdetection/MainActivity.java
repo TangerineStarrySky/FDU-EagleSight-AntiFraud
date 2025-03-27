@@ -3,6 +3,7 @@ package com.example.smsdetection;
 
 //import static com.example.smsdetection.model.NavViewKt.NavView;
 
+import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,6 +20,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.StrictMode;
 import android.provider.Settings;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -157,6 +159,10 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
 
         input_sms = findViewById(R.id.input_sms);
         output_result = findViewById(R.id.output_result);
+
+        // 启用滚动功能
+        input_sms.setMovementMethod(new ScrollingMovementMethod());
+        output_result.setMovementMethod(new ScrollingMovementMethod());
 
         mDBHelper = SmsDBHelper.getInstance(this);
         mDBHelper.openReadLink();
@@ -387,13 +393,29 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
         isMenuOpen = true;
 
         // 展开动画
-//        ObjectAnimator.ofFloat(btnInfo, "translationY", -100f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnHelp, "translationY", -200f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnSetting, "translationY", -300f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnLearning, "translationY", -400f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnHistory, "translationY", -500f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnFeedback, "translationY", -600f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnShare, "translationY", -700f).setDuration(300).start();
+        // btnSetting
+        ObjectAnimator.ofFloat(btnSetting, "translationY", -200f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnSetting, "translationX", -200f).setDuration(300).start();
+
+        // btnInfo
+        ObjectAnimator.ofFloat(btnInfo, "translationX", -200f).setDuration(300).start();
+
+        // btnHelp
+        ObjectAnimator.ofFloat(btnHelp, "translationY", -200f).setDuration(300).start();
+
+        // btnLearning
+        ObjectAnimator.ofFloat(btnLearning, "translationY", -200f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnLearning, "translationX", -400f).setDuration(300).start();
+
+        // btnHistory
+        ObjectAnimator.ofFloat(btnHistory, "translationY", -200f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnHistory, "translationX", -600f).setDuration(300).start();
+
+        // btnFeedback
+        ObjectAnimator.ofFloat(btnFeedback, "translationX", -600f).setDuration(300).start();
+
+        // btnShare
+        ObjectAnimator.ofFloat(btnShare, "translationX", -400f).setDuration(300).start();
 
         // 设置可见性
         btnInfo.setVisibility(View.VISIBLE);
@@ -409,24 +431,45 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
         isMenuOpen = false;
 
         // 收起动画
-//        ObjectAnimator.ofFloat(btnInfo, "translationY", 0f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnHelp, "translationY", 0f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnSetting, "translationY", 0f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnLearning, "translationY", 0f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnHistory, "translationY", 0f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnFeedback, "translationY", 0f).setDuration(300).start();
-//        ObjectAnimator.ofFloat(btnShare, "translationY", 0f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnSetting, "translationY", -80f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnSetting, "translationX", -80f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnInfo, "translationX", -80f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnHelp, "translationY", -80f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnLearning, "translationY", -80f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnLearning, "translationX", -80f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnHistory, "translationY", -80f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnHistory, "translationX", -80f).setDuration(300).start();
+        ObjectAnimator.ofFloat(btnShare, "translationX", -80f).setDuration(300).start();
+        ObjectAnimator animator = ObjectAnimator.ofFloat(btnFeedback, "translationX", -80f).setDuration(300);
 
-        // 设置隐藏
-        btnInfo.setVisibility(View.GONE);
-        btnHelp.setVisibility(View.GONE);
-        btnSetting.setVisibility(View.GONE);
-        btnLearning.setVisibility(View.GONE);
-        btnHistory.setVisibility(View.GONE);
-        btnFeedback.setVisibility(View.GONE);
-        btnShare.setVisibility(View.GONE);
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(@NonNull Animator animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(@NonNull Animator animation) {
+                // 设置隐藏
+                btnInfo.setVisibility(View.GONE);
+                btnHelp.setVisibility(View.GONE);
+                btnSetting.setVisibility(View.GONE);
+                btnLearning.setVisibility(View.GONE);
+                btnHistory.setVisibility(View.GONE);
+                btnFeedback.setVisibility(View.GONE);
+                btnShare.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationCancel(@NonNull Animator animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(@NonNull Animator animation) {
+            }
+        });
+        animator.start();
     }
-//
+
 //    private void checkOnDevice(String message, Context context){
 //        try {
 //            appViewModel.getChatState().myChat(message, false, new ChatCallback() {
