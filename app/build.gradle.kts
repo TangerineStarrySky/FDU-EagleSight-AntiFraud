@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.ui.tooling.preview.android)
 //    implementation(project(":mlc4j"))
     implementation(libs.navigation.compose)
+    implementation(libs.preference)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

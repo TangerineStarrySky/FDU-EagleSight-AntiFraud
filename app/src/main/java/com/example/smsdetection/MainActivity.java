@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.ContentObserver;
 import android.database.Cursor;
@@ -149,10 +150,14 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
             StrictMode.setThreadPolicy(policy);
         }
 
-        findViewById(R.id.btn_history).setOnClickListener(this);
         findViewById(R.id.btn_detect).setOnClickListener(this);
+        findViewById(R.id.btn_history).setOnClickListener(this);
         findViewById(R.id.btn_learning).setOnClickListener(this);
         findViewById(R.id.btn_feedback).setOnClickListener(this);
+        findViewById(R.id.btn_info).setOnClickListener(this);
+        findViewById(R.id.btn_setting).setOnClickListener(this);
+        findViewById(R.id.btn_share).setOnClickListener(this);
+        findViewById(R.id.btn_help).setOnClickListener(this);
 
         status_btn = findViewById(R.id.status_switch);
         status_btn.setOnClickListener(this);
@@ -386,6 +391,70 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
             } else {
                 openMenu();
             }
+        } else if(vid == R.id.btn_info){
+            showAppInfo();
+        } else if(vid == R.id.btn_help) {
+            showHelpDialog();
+        } else if(vid == R.id.btn_setting) {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, SettingsActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        } else if(vid == R.id.btn_share) {
+
+        }
+    }
+
+    private void showHelpDialog() {
+        // 创建帮助信息对话框
+        new AlertDialog.Builder(this)
+                .setTitle("帮助信息") // 对话框标题
+                .setMessage("欢迎使用我们的应用！\n\n" +
+                        "1. **功能介绍**\n" +
+                        "   - 功能1：描述功能1的用途和操作方法。\n" +
+                        "   - 功能2：描述功能2的用途和操作方法。\n" +
+                        "   - 功能3：描述功能3的用途和操作方法。\n\n" +
+                        "2. **常见问题**\n" +
+                        "   - 问题1：如何解决常见问题1？\n" +
+                        "   - 问题2：如何解决常见问题2？\n\n" +
+                        "3. **联系我们**\n" +
+                        "   - 如果您有任何疑问或需要帮助，请通过以下方式联系我们：\n" +
+                        "     - 邮箱：support@example.com\n" +
+                        "     - 官方网站：https://example.com\n")
+                .setPositiveButton("确定", null) // 添加一个“确定”按钮
+                .setNegativeButton("更多帮助", (dialog, which) -> {
+                    // 点击“更多帮助”按钮时的操作
+                    // 例如：跳转到一个网页或打开一个帮助文档
+                })
+                .show(); // 显示对话框
+    }
+
+    private void showAppInfo() {
+        try {
+            // 获取当前应用的包信息
+            PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+
+            // 构建要显示的 APP 信息
+            String appName = getString(packageInfo.applicationInfo.labelRes);
+            String packageName = packageInfo.packageName;
+            String versionName = packageInfo.versionName;
+            int versionCode = packageInfo.versionCode;
+
+            // 创建对话框
+            new AlertDialog.Builder(this)
+                    .setTitle("APP 信息")
+                    .setMessage("应用名称: " + appName + "\n" +
+                            "包名: " + packageName + "\n" +
+                            "版本名称: " + versionName + "\n" +
+                            "版本号: " + versionCode)
+                    .setPositiveButton("确定", null)
+                    .show();
+        } catch (PackageManager.NameNotFoundException e) {
+            new AlertDialog.Builder(this)
+                    .setTitle("错误")
+                    .setMessage("无法获取 APP 信息")
+                    .setPositiveButton("确定", null)
+                    .show();
         }
     }
 
