@@ -1,132 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/animated_gradient"
     tools:context=".MainActivity">
 
-    <include layout="@layout/title_sms"/>
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_launcher_round"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:elevation="12dp" />
+    <!-- 霓虹标题 -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="鹰眼智能识别"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="40dp"
+        android:shadowColor="@color/white"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="8" />
 
-<!--    <FrameLayout-->
-<!--        android:id="@+id/compose_container"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent" />-->
-
-    <RelativeLayout
+    <!-- 中心悬浮卡片 -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/glass_card"
+        android:padding="24dp"
+        android:elevation="10dp"
+        android:layout_margin="20dp">
 
-        <LinearLayout
+        <!-- 开启分析按钮 -->
+        <Button
+            android:id="@+id/status_switch"
             android:layout_width="match_parent"
-            android:layout_height="620dp"
-            android:orientation="vertical">
-            <Button
-                android:id="@+id/status_switch"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/blue"
-                android:text="@string/open_analysis"/>
+            android:layout_height="wrap_content"
+            android:text="开启分析"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/neon_button" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_margin="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center|end"
-                    android:text="短信内容："
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <EditText
-                    android:id="@+id/input_sms"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:gravity="start|top"
-                    android:hint="请填写需要检测的信息"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btn_detect"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="检　　测"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center|end"
-                    android:text="检测结果："
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/output_result"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="这里将显示识别检测结果"
-                        android:gravity="start|top"
-                        android:textColor="@color/black"
-                        android:textSize="17sp" />
-                </ScrollView>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
+        <!-- 短信输入 -->
+        <EditText
+            android:id="@+id/input_sms"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:padding="1dp">
+            android:layout_height="120dp"
+            android:hint="请输入短信内容"
+            android:textColorHint="@color/white"
+            android:background="@drawable/neon_input"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:padding="10dp"
+            android:layout_marginTop="16dp" />
 
-            <TextView
-                android:id="@+id/tv_learning"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:background="#C4F2FB"
-                android:gravity="center"
-                android:layout_margin="10dp"
-                android:text="学习反诈知识"
-                android:textSize="20sp"/>
+        <!-- 检测按钮 -->
+        <Button
+            android:id="@+id/btn_detect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="开始检测"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/neon_button"
+            android:layout_marginTop="16dp" />
 
-            <TextView
-                android:id="@+id/tv_feedback"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:background="#C4F2FB"
-                android:gravity="center"
-                android:layout_margin="10dp"
-                android:text="用户反馈"
-                android:textSize="20sp"/>
+        <!-- 检测结果 -->
+        <TextView
+            android:id="@+id/output_result"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/neon_input"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:padding="8dp"
+            android:text="这里显示检测结果"
+            android:gravity="center|left"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
 
-        </LinearLayout>
+    <!-- 悬浮按钮菜单 -->
+    <!-- 底部导航 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@drawable/glass_card"
+        android:padding="5dp">
 
+        <TextView
+            android:id="@+id/tv_learning"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="学习反诈知识"
+            android:textSize="18sp"
+            android:textColor="@color/neon_purple"
+            android:background="@drawable/neon_button" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_feedback"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="用户反馈"
+            android:textSize="18sp"
+            android:textColor="@color/neon_purple"
+            android:background="@drawable/neon_button" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_history"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="历史记录"
+            android:textSize="18sp"
+            android:textColor="@color/neon_purple"
+            android:background="@drawable/neon_button" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/btn_menu"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_menu"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:background="@drawable/neon_button"
+        android:elevation="12dp" />
+</FrameLayout>

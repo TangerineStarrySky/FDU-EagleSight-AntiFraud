@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.ContentObserver;
 import android.database.Cursor;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -90,6 +91,12 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // 启动背景动画
+        AnimationDrawable animationDrawable = (AnimationDrawable) findViewById(R.id.main).getBackground();
+        animationDrawable.setEnterFadeDuration(2000); // 渐变进入时间
+        animationDrawable.setExitFadeDuration(2000);  // 渐变退出时间
+        animationDrawable.start();
 
         // 获取Compose容器
 //        FrameLayout composeContainer = findViewById(R.id.compose_container);
