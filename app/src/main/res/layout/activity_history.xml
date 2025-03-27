@@ -24,9 +24,9 @@
             android:gravity="center">
 
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/ic_search"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@android:drawable/ic_menu_search"
                 android:layout_marginEnd="10dp"/>
 
             <!-- 搜索框 -->

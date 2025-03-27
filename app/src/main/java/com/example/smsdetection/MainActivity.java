@@ -3,6 +3,7 @@ package com.example.smsdetection;
 
 //import static com.example.smsdetection.model.NavViewKt.NavView;
 
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -23,6 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.ComponentActivity;
@@ -68,6 +70,15 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
     private Button status_btn;
     private EditText input_sms;
     private TextView output_result;
+    private ImageView btnMenu;
+    private ImageView btnInfo;
+    private ImageView btnHelp;
+    private ImageView btnSetting;
+    private ImageView btnLearning;
+    private ImageView btnHistory;
+    private ImageView btnFeedback;
+    private ImageView btnShare;
+    private boolean isMenuOpen = false;
 
     private SmsGetObserver mObserver;
 
@@ -98,6 +109,19 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
         animationDrawable.setExitFadeDuration(2000);  // 渐变退出时间
         animationDrawable.start();
 
+        // 初始化按钮
+        btnMenu = findViewById(R.id.btn_menu);
+        btnInfo = findViewById(R.id.btn_info);
+        btnHelp = findViewById(R.id.btn_help);
+        btnSetting = findViewById(R.id.btn_setting);
+        btnLearning = findViewById(R.id.btn_learning);
+        btnHistory = findViewById(R.id.btn_history);
+        btnFeedback = findViewById(R.id.btn_feedback);
+        btnShare = findViewById(R.id.btn_share);
+
+        // 设置按钮点击事件
+        btnMenu.setOnClickListener(this);
+
         // 获取Compose容器
 //        FrameLayout composeContainer = findViewById(R.id.compose_container);
 
@@ -123,15 +147,10 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
             StrictMode.setThreadPolicy(policy);
         }
 
-        TextView tv_title = findViewById(R.id.tv_title);
-        tv_title.setText("鹰眼智能识别");
-        TextView tv_history = findViewById(R.id.tv_history);
-        tv_history.setText("历史记录");
-
-        findViewById(R.id.tv_history).setOnClickListener(this);
+        findViewById(R.id.btn_history).setOnClickListener(this);
         findViewById(R.id.btn_detect).setOnClickListener(this);
-        findViewById(R.id.tv_learning).setOnClickListener(this);
-        findViewById(R.id.tv_feedback).setOnClickListener(this);
+        findViewById(R.id.btn_learning).setOnClickListener(this);
+        findViewById(R.id.btn_feedback).setOnClickListener(this);
 
         status_btn = findViewById(R.id.status_switch);
         status_btn.setOnClickListener(this);
@@ -321,18 +340,18 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
                 status_btn.setText(R.string.open_analysis);
                 ToastUtil.show(this, "鹰眼智能识别已关闭！");
             }
-        }else if (vid == R.id.tv_history){
+        }else if (vid == R.id.btn_history){
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, HistoryActivity.class);
 //            intent.putExtra("chat_state", appViewModel.getChatState());
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
-        }else if (vid == R.id.tv_learning){
+        }else if (vid == R.id.btn_learning){
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, LearningActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
-        }else if (vid == R.id.tv_feedback){
+        }else if (vid == R.id.btn_feedback){
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, FeedbackActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -355,7 +374,57 @@ public class MainActivity extends ComponentActivity implements View.OnClickListe
 
             check(message, ChatClient.QWEN1_5b);
 //            checkOnDevice(message, this);
+        }else if(vid == R.id.btn_menu){
+            if (isMenuOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         }
+    }
+
+    private void openMenu() {
+        isMenuOpen = true;
+
+        // 展开动画
+//        ObjectAnimator.ofFloat(btnInfo, "translationY", -100f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnHelp, "translationY", -200f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnSetting, "translationY", -300f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnLearning, "translationY", -400f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnHistory, "translationY", -500f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnFeedback, "translationY", -600f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnShare, "translationY", -700f).setDuration(300).start();
+
+        // 设置可见性
+        btnInfo.setVisibility(View.VISIBLE);
+        btnHelp.setVisibility(View.VISIBLE);
+        btnSetting.setVisibility(View.VISIBLE);
+        btnLearning.setVisibility(View.VISIBLE);
+        btnHistory.setVisibility(View.VISIBLE);
+        btnFeedback.setVisibility(View.VISIBLE);
+        btnShare.setVisibility(View.VISIBLE);
+    }
+
+    private void closeMenu() {
+        isMenuOpen = false;
+
+        // 收起动画
+//        ObjectAnimator.ofFloat(btnInfo, "translationY", 0f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnHelp, "translationY", 0f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnSetting, "translationY", 0f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnLearning, "translationY", 0f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnHistory, "translationY", 0f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnFeedback, "translationY", 0f).setDuration(300).start();
+//        ObjectAnimator.ofFloat(btnShare, "translationY", 0f).setDuration(300).start();
+
+        // 设置隐藏
+        btnInfo.setVisibility(View.GONE);
+        btnHelp.setVisibility(View.GONE);
+        btnSetting.setVisibility(View.GONE);
+        btnLearning.setVisibility(View.GONE);
+        btnHistory.setVisibility(View.GONE);
+        btnFeedback.setVisibility(View.GONE);
+        btnShare.setVisibility(View.GONE);
     }
 //
 //    private void checkOnDevice(String message, Context context){
