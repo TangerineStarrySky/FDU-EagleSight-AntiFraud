@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="短信类型占比统计"
-        android:textSize="28sp"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
         android:textColor="@color/white"
         android:layout_marginBottom="8dp"/>
 
@@ -22,8 +23,8 @@
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pie_chart"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_height="290dp"
+        android:layout_marginBottom="10dp"/>
 
     <!-- 诈骗信息按发信人分类的柱状图标题 -->
     <TextView
@@ -32,7 +33,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="诈骗短信来源分析（Top 10）"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textColor="@color/white"
         android:layout_marginBottom="8dp"/>
 
@@ -40,6 +41,6 @@
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/bar_chart_sender"
         android:layout_width="match_parent"
-        android:layout_height="300dp"/>
+        android:layout_height="290dp"/>
 
 </LinearLayout>

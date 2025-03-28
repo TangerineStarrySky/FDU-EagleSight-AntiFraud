@@ -24,7 +24,7 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal|top"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="40dp"
         android:paddingTop="40dp"
         android:shadowColor="@color/white"
         android:shadowDx="8"

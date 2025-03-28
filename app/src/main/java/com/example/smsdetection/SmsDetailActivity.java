@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -32,6 +33,7 @@ public class SmsDetailActivity extends AppCompatActivity implements View.OnClick
     private TextView detail_result;
     private TextView detail_type;
     private Button detail_btn;
+    private ScrollView detail_scroll;
 
 //    private AppViewModel.ChatState chatState;
 
@@ -62,6 +64,7 @@ public class SmsDetailActivity extends AppCompatActivity implements View.OnClick
         detail_content = findViewById(R.id.detail_content);
         detail_result = findViewById(R.id.detail_result);
         detail_type = findViewById(R.id.detail_type);
+        detail_scroll = findViewById(R.id.detail_scroll);
 
         mDBHelper = SmsDBHelper.getInstance(this);
 
@@ -86,6 +89,8 @@ public class SmsDetailActivity extends AppCompatActivity implements View.OnClick
             } catch (ApiException | NoApiKeyException | InputRequiredException e) {
                 detail = e.getMessage();
             }
+            detail_scroll.setVisibility(View.VISIBLE);
+            detail_result.setVisibility(View.VISIBLE);
             detail_result.setText(detail);
 //            chatState.myChat(String.valueOf(detail_content.getText()), true, new ChatCallback() {
 //                @Override
@@ -114,7 +119,6 @@ public class SmsDetailActivity extends AppCompatActivity implements View.OnClick
             detail_content.setText(info.content);
             if(info.type == 1){
                 detail_btn.setVisibility(View.VISIBLE);
-                detail_result.setVisibility(View.VISIBLE);
                 detail_type.setTextColor(getResources().getColor(R.color.red));
                 detail_type.setText("该短信可能为诈骗短信。");
             }else {

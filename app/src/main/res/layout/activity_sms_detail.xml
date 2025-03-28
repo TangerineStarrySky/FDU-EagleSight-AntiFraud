@@ -75,13 +75,13 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="120dp"
+            android:layout_margin="10dp">
             <TextView
                 android:id="@+id/detail_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="这里填写需要检测的信息"
-                android:layout_margin="10dp"
                 android:textSize="17sp"
                 android:textColor="@color/white"
                 android:paddingBottom="8dp"/>
@@ -122,14 +122,16 @@
             android:background="@drawable/neon_button"/>
 
         <ScrollView
+            android:id="@+id/detail_scroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:visibility="gone">
             <TextView
                 android:id="@+id/detail_result"
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:text="检测详情"
                 android:textSize="17sp"
                 android:textColor="@color/white"/>
