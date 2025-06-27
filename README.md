@@ -43,11 +43,21 @@
 
 ### 项目截图
 
+- **原界面**
 <div style="display: flex; justify-content: space-around;">
   <img src="./imgs/homepage_resized.png" style="width: 24%;"/>
   <img src="./imgs/history_resized.png" style="width: 24%;"/>
   <img src="./imgs/detail_resized.png" style="width: 24%;"/>
   <img src="./imgs/learning_resized.png" style="width: 24%;"/>
+</div>
+
+
+- **界面美化后**（[UI-Upgrade分支](https://github.com/TangerineStarrySky/FDU-EagleSight-AntiFraud/tree/UI-Upgrade)）
+<div style="display: flex; justify-content: space-around;">
+  <img src="./imgs/upgrade-ui1.jpg" style="width: 24%;"/>
+  <img src="./imgs/upgrade-ui2.jpg" style="width: 24%;"/>
+  <img src="./imgs/upgrade-ui3.jpg" style="width: 24%;"/>
+  <img src="./imgs/upgrade-ui4.jpg" style="width: 24%;"/>
 </div>
 
 
