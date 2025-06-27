@@ -1,0 +1,4 @@
+*.java linguist-language=Java 
+*.xml linguist-language=Java
+*.kt linguist-language=Kotlin
+*.ipynb linguist-language=Jupyter Notebook
